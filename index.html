@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCAM — A Text Recognition Dataset from Sahidic Coptic Ancient Manuscripts</title>
+  <meta name="description" content="SCAM (Sahidic Coptic Ancient Manuscripts): a line-level Handwritten Text Recognition dataset built from the 11th-century CLM 359 manuscript, for benchmarking low-resource, rare-script, cross-domain HTR.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SCAM — A Text Recognition Dataset from Sahidic Coptic Ancient Manuscripts">
+  <meta property="og:description" content="A line-level HTR dataset in the extinct Sahidic Coptic language, with a dual-archive benchmark for low-resource, rare-script, cross-domain handwriting recognition.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="static/images/samples.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%B2%9F%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Coptic&display=swap" rel="stylesheet">
+
+  <!-- Bulma + icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+
+<body>
+
+  <!-- Floating "More Works" tab (à la idattn.silviacascianelli.com) -->
+  <div id="more-works">
+    <div class="mw-tab">MORE&nbsp;WORKS</div>
+    <div class="mw-body">
+      <h5>From our group</h5>
+      <a href="https://idattn.silviacascianelli.com" target="_blank" rel="noopener">Identity Attention for HTR ↗</a>
+      <a href="https://aimagelab.ing.unimore.it/" target="_blank" rel="noopener">AImageLab ↗</a>
+    </div>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero is-parchment">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+
+        <span class="title-badge coptic">ⲥ ⲕ ⲁ ⲙ</span>
+
+        <h1 class="title is-2 publication-title">
+          SCAM: A Text Recognition Dataset from<br>Sahidic Coptic Ancient Manuscripts
+        </h1>
+
+        <p class="publication-venue is-size-6 mb-4">
+          <i class="fa-regular fa-file-lines"></i>&nbsp; ICDAR 2026
+        </p>
+
+        <div class="publication-authors is-size-6 mb-2">
+          <span class="author-block"><a href="mailto:fabio.quattrini@unimore.it">Fabio Quattrini</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="mailto:czaccagnino@unimore.it">Carmine Zaccagnino</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="mailto:bianchi@fscire.it">Costanza Bianchi</a><sup>1,2</sup>,</span>
+          <span class="author-block"><a href="mailto:silvia.cascianelli@unimore.it">Silvia Cascianelli</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="mailto:rita.cucchiara@unimore.it">Rita Cucchiara</a><sup>1</sup></span>
+        </div>
+
+        <div class="publication-authors affil is-size-7 mb-5">
+          <span class="author-block"><sup>1</sup>University of Modena and Reggio Emilia</span>&nbsp;&nbsp;
+          <span class="author-block"><sup>2</sup>Fondazione per le Scienze Religiose (FSCIRE)</span>
+        </div>
+
+        <!-- Link buttons -->
+        <div class="buttons is-centered">
+          <a href="#" class="button link-button is-rounded" data-asset="paper">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+          </a>
+          <a href="#" class="button link-button is-rounded" data-asset="arxiv">
+            <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+          </a>
+          <a href="#" class="button link-button is-rounded" data-asset="dataset">
+            <span class="icon"><i class="fas fa-database"></i></span><span>Dataset</span>
+          </a>
+        </div>
+        <p class="is-size-7 affil">Paper, arXiv and dataset links will be added upon publication.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TEASER ============ -->
+  <section class="section pt-5 pb-4">
+    <div class="container is-max-desktop teaser has-text-centered">
+      <figure>
+        <img src="static/images/samples.png" alt="Sample text lines from the SCAM manuscript">
+        <p class="caption">
+          Sample line images used to build SCAM. The top rows belong to the <strong>SCAM-A</strong>
+          subset (professional scans), the bottom rows to <strong>SCAM-B</strong> (camera photographs).
+          The manuscript is written in <em>scriptio continua</em> — without spaces between words.
+        </p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ ABSTRACT ============ -->
+  <section class="section pt-4">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">Abstract</h2>
+      <div class="content is-size-5 mt-4">
+        <p>
+          We target <strong>Handwritten Text Recognition (HTR)</strong> in low-resource scenarios, which
+          arise from underrepresented languages, rare scripts, and the degraded visual conditions typical of
+          historical documents. We introduce <strong>SCAM (Sahidic Coptic Ancient Manuscripts)</strong>, a new
+          line-level dataset built from digitized ancient manuscripts written in the extinct
+          <strong>Sahidic Coptic</strong> dialect. The dataset reflects a realistic and challenging setting, as
+          it combines heterogeneous acquisition conditions across libraries with typical manuscript degradations
+          such as ink fading, bleed-through, and material deterioration. Beyond visual complexity, SCAM poses
+          significant linguistic challenges due to the scarcity of resources for Sahidic Coptic, its uncommon
+          alphabet, and dialect-specific diacritics. To support research in low-resource HTR, we benchmark several
+          state-of-the-art approaches based on different paradigms, highlighting their limitations and strengths,
+          and underlining the gap between current HTR performance on well-resourced modern scripts and
+          historically grounded, low-resource scenarios.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HIGHLIGHTS ============ -->
+  <section class="section pt-3">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">Highlights</h2>
+      <ul class="highlights is-size-5 mt-4">
+        <li>A new <strong>line-level HTR dataset</strong> in <strong>Sahidic Coptic</strong>, an extinct
+          language written in <em>scriptio continua</em> with an uncommon supralinear diacritic system.</li>
+        <li>Derived from <strong>CLM 359</strong>, an 11th-century parchment manuscript (1002–1003 C.E.) from
+          the White Monastery, hand-annotated with diplomatic transcriptions by an expert Coptologist.</li>
+        <li>A <strong>dual-archive design</strong> (SCAM-A &amp; SCAM-B) that exposes a real cross-domain gap:
+          same author and topic, but different libraries and digitization conditions.</li>
+        <li>A <strong>benchmark of 11 state-of-the-art HTR models</strong> spanning CTC, attention, and
+          Transformer paradigms, evaluated within- and cross-domain.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ DATASET ============ -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">The SCAM Dataset</h2>
+      <div class="content is-size-5 mt-4">
+        <p>
+          SCAM contains lines from <strong>27 leaves</strong> (53 pages) of a single-author manuscript known as
+          <strong>Coptic Literary Manuscript (CLM) 359</strong>, dated to 1002–1003 C.E. and originating from the
+          White Monastery in Upper Egypt. Only 49 leaves of the original codex are known to have survived, now
+          spread across libraries and institutions worldwide and digitized under highly different conditions.
+          Lines are isolated with <strong>polygon annotations</strong> (rather than bounding boxes) to handle
+          slanted lines and the ornate paragraph-initial letters typical of the script.
+        </p>
+      </div>
+
+      <!-- stats -->
+      <div class="stat-grid my-5">
+        <div class="stat"><div class="num">3,240</div><div class="lbl">Text lines</div></div>
+        <div class="stat"><div class="num">99</div><div class="lbl">Graphemes</div></div>
+        <div class="stat"><div class="num">53</div><div class="lbl">Pages / 27 leaves</div></div>
+        <div class="stat"><div class="num">1</div><div class="lbl">Author · scriptio continua</div></div>
+      </div>
+
+      <!-- subsets -->
+      <div class="subset-grid">
+        <div class="subset a">
+          <h4>SCAM-A</h4>
+          <span class="tag-mini">Professional scanners · controlled lighting</span>
+          <ul class="content">
+            <li><strong>1,445</strong> lines · 24 pages · 12 leaves</li>
+            <li><strong>87</strong> graphemes · 11.52 ± 2.30 chars/line</li>
+            <li>Splits: 943 train / 242 val / 260 test</li>
+            <li>Cleaner images, broader glyph coverage</li>
+          </ul>
+        </div>
+        <div class="subset b">
+          <h4>SCAM-B</h4>
+          <span class="tag-mini">Camera photographs · uncontrolled conditions</span>
+          <ul class="content">
+            <li><strong>1,795</strong> lines · 29 pages · 15 leaves</li>
+            <li><strong>67</strong> graphemes · 11.29 ± 1.81 chars/line</li>
+            <li>Splits: 1,057 train / 368 val / 370 test</li>
+            <li>More degradation, narrower glyph set</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ANALYSIS ============ -->
+  <section class="section pt-2">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">Visual &amp; Linguistic Analysis</h2>
+      <div class="content is-size-5 mt-4">
+        <p>
+          Although both subsets come from the <em>same</em> single-author manuscript, the difference in
+          preservation and digitization induces a measurable domain gap. We quantify the visual gap with FID/KID
+          and the handwriting-style gap with HWD, and the linguistic gap with the Jensen–Shannon divergence of
+          character n-grams. Grayscale conversion narrows — but does not close — the visual gap.
+        </p>
+      </div>
+
+      <div class="columns is-variable is-5 mt-2">
+        <div class="column is-half">
+          <div class="fig-card">
+            <img src="static/images/tsne.png" alt="t-SNE projections of VGG and HWD features for the two subsets">
+            <p class="caption">t-SNE of VGG (appearance) and HWD (handwriting-style) features. RGB features form
+              two clear clusters that move closer under grayscale conversion.</p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="fig-card">
+            <img src="static/images/graphemes.png" alt="Grapheme frequency distribution across SCAM-A and SCAM-B">
+            <p class="caption">Grapheme distribution (log scale). Frequent characters are shared, but each subset
+              owns unique graphemes — SCAM-A has 31 absent from SCAM-B, versus 11 the other way.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-wrap mt-4">
+        <table class="results">
+          <thead>
+            <tr><th>SCAM-A ↔ SCAM-B</th><th>FID ↓</th><th>KID ↓</th><th>HWD ↓</th><th>JSD ↓</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>RGB images</td><td>113.62</td><td>0.13</td><td>1.06</td><td rowspan="2" style="vertical-align:middle">0.49</td></tr>
+            <tr><td>Grayscale images</td><td>65.06</td><td>0.07</td><td>1.04</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Lower is more similar. HWD values in 0–1.5 are typical of same-author sets, consistent
+        with SCAM being a single-author manuscript.</p>
+    </div>
+  </section>
+
+  <!-- ============ BENCHMARK ============ -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">Benchmark</h2>
+      <div class="content is-size-5 mt-4">
+        <p>
+          We benchmark <strong>11 HTR models</strong> across CTC, sequence-to-sequence attention, and Transformer
+          paradigms, reporting <strong>Character Error Rate (CER)</strong> and <strong>Sequence Error Rate
+          (SER)</strong>. The table below reports models trained on the full SCAM training set and tested on the
+          whole test set and on each subset.
+        </p>
+      </div>
+
+      <div class="table-wrap mt-3">
+        <table class="results">
+          <thead>
+            <tr>
+              <th rowspan="2">Model</th>
+              <th colspan="2">SCAM</th>
+              <th colspan="2">SCAM-A</th>
+              <th colspan="2">SCAM-B</th>
+            </tr>
+            <tr class="grp">
+              <th class="grp">CER ↓</th><th class="grp">SER ↓</th>
+              <th class="grp">CER ↓</th><th class="grp">SER ↓</th>
+              <th class="grp">CER ↓</th><th class="grp">SER ↓</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>CRNN</td><td>9.47</td><td>49.79</td><td>9.00</td><td>51.54</td><td>9.85</td><td>48.38</td></tr>
+            <tr><td>C-SAN</td><td>88.06</td><td>100.00</td><td>87.52</td><td>100.00</td><td>88.50</td><td>100.00</td></tr>
+            <tr class="best"><td>VAN</td><td>5.25</td><td>31.99</td><td>5.96</td><td>36.15</td><td>4.68</td><td>28.65</td></tr>
+            <tr><td>HTR-VT</td><td>10.27</td><td>59.62</td><td>10.98</td><td>66.54</td><td>9.70</td><td>54.05</td></tr>
+            <tr><td>Kang et al.</td><td>11.43</td><td>54.18</td><td>11.44</td><td>57.69</td><td>11.42</td><td>51.35</td></tr>
+            <tr><td>Michael et al.</td><td>33.35</td><td>91.16</td><td>36.19</td><td>95.39</td><td>31.07</td><td>87.76</td></tr>
+            <tr><td>LT</td><td>22.59</td><td>78.74</td><td>21.86</td><td>78.85</td><td>23.18</td><td>78.65</td></tr>
+            <tr><td>VLT</td><td>15.03</td><td>62.81</td><td>14.89</td><td>67.31</td><td>15.15</td><td>59.19</td></tr>
+            <tr><td>TrOCR-S</td><td>13.12</td><td>65.99</td><td>17.04</td><td>86.87</td><td>9.96</td><td>49.20</td></tr>
+            <tr><td>TrOCR-B</td><td>12.42</td><td>74.39</td><td>14.42</td><td>77.78</td><td>10.81</td><td>71.66</td></tr>
+            <tr><td>TrOCR-L</td><td>11.33</td><td>72.63</td><td>12.82</td><td>74.50</td><td>10.14</td><td>71.12</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Trained on the full SCAM training set. ★ marks the best model (VAN). Lower is better.</p>
+
+      <h3 class="title is-5 mt-6">Key findings</h3>
+      <ul class="highlights is-size-5">
+        <li><strong>Architecture matters more than scale for rare scripts.</strong> The lightweight, CTC-based
+          VAN beats large synthetically-pretrained TrOCR variants: a Latin-script language prior does not
+          transfer to an unseen script under data-scarce fine-tuning.</li>
+        <li><strong>Data breadth beats model capacity.</strong> Training on the full SCAM (multi-archive) data
+          substantially improves most models — in-domain data outweighs raw model size.</li>
+        <li><strong>The domain gap is asymmetric.</strong> Models trained on SCAM-B generalize to SCAM-A worse
+          than the reverse, owing to SCAM-A's broader grapheme coverage and cleaner scans.</li>
+        <li><strong>Grayscale helps, but is no substitute</strong> for training on diverse, multi-archive data.</li>
+      </ul>
+
+      <div class="fig-card mt-5">
+        <img src="static/images/qualitative.png" alt="Qualitative results of the best model (VAN) across train/test setups">
+        <p class="caption">Qualitative results of the best model (VAN) across <em>Train → Test</em> setups.
+          Errors are highlighted in red; per-line CER is reported. SER stays high even at low CER — a direct
+          consequence of <em>scriptio continua</em>, where a single character error fails the whole line.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BIBTEX ============ -->
+  <section class="section bibtex">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title">BibTeX</h2>
+      <pre class="mt-4"><code>@inproceedings{quattrini2026scam,
+  title     = {A Text Recognition Dataset from Sahidic Coptic Ancient Manuscripts},
+  author    = {Quattrini, Fabio and Zaccagnino, Carmine and Bianchi, Costanza
+               and Cascianelli, Silvia and Cucchiara, Rita},
+  booktitle = {International Conference on Document Analysis and Recognition (ICDAR)},
+  year      = {2026}
+}</code></pre>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer is-parchment">
+    <div class="container is-max-desktop has-text-centered content">
+      <p>
+        The SCAM dataset is released to support research on low-resource, rare-script, and cross-domain
+        handwritten text recognition.
+      </p>
+      <p class="is-size-7">
+        Page template adapted from the
+        <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>,
+        itself based on <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a>.
+        Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

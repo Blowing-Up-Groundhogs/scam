@@ -1,0 +1,222 @@
+/* ===========================================================
+   SCAM — Project Page
+   Inspired by the Academic Project Page Template (Nerfies).
+   Theme: ancient parchment + Coptic-ink teal.
+   =========================================================== */
+
+:root {
+  --ink:        #1f2a2a;   /* dark text */
+  --teal:       #2f5d5b;   /* SCAM-A accent (slate teal) */
+  --teal-dark:  #234645;
+  --sand:       #cbae86;   /* SCAM-B accent (parchment tan) */
+  --sand-soft:  #e9ddc4;
+  --parchment:  #f7f1e3;   /* page background */
+  --parchment2: #fbf7ee;
+  --line:       #e2d8c2;
+  --muted:      #6b6356;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans', 'Google Sans', sans-serif;
+  color: var(--ink);
+  background: var(--parchment);
+}
+
+.coptic { font-family: 'Noto Sans Coptic', 'Noto Sans', serif; }
+
+/* ---------- Hero ---------- */
+.hero.is-parchment {
+  background:
+    radial-gradient(1200px 480px at 50% -10%, var(--parchment2), transparent 70%),
+    var(--parchment);
+  border-bottom: 1px solid var(--line);
+}
+
+.publication-title {
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+.title-badge {
+  display: inline-block;
+  font-family: 'Noto Sans Coptic', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .35em;
+  color: var(--teal);
+  background: var(--sand-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .35rem 1.1rem;
+  margin-bottom: 1.1rem;
+}
+
+.publication-venue {
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+
+.publication-authors a { color: var(--teal); }
+.publication-authors a:hover { color: var(--teal-dark); text-decoration: underline; }
+.author-block { white-space: nowrap; }
+.affil { color: var(--muted); }
+
+/* ---------- Link buttons ---------- */
+.link-button.button {
+  background: var(--ink);
+  color: var(--parchment2);
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform .12s ease, background .2s ease;
+}
+.link-button.button:hover { background: var(--teal); transform: translateY(-2px); color:#fff; }
+.link-button .icon { color: inherit; }
+
+/* ---------- Sections ---------- */
+.section { padding: 3rem 1.5rem; }
+.section-title {
+  font-family: 'Google Sans','Noto Sans',sans-serif;
+  font-weight: 700;
+  color: var(--ink);
+  position: relative;
+  display: inline-block;
+}
+.section-title::after {
+  content:"";
+  display:block;
+  width: 52px; height: 4px;
+  margin-top: .5rem;
+  background: linear-gradient(90deg, var(--teal), var(--sand));
+  border-radius: 4px;
+}
+.content p { line-height: 1.7; }
+
+.teaser figure img {
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 30px rgba(31,42,42,.10);
+  background:#fff;
+}
+.fig-card {
+  background: var(--parchment2);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.1rem;
+  box-shadow: 0 6px 18px rgba(31,42,42,.06);
+}
+.fig-card img { border-radius: 8px; display:block; margin:auto; }
+.caption { color: var(--muted); font-size: .92rem; margin-top: .8rem; }
+
+/* ---------- Stat cards ---------- */
+.stat-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+@media (max-width: 768px){ .stat-grid { grid-template-columns: repeat(2,1fr); } }
+.stat {
+  background: var(--parchment2);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(31,42,42,.05);
+}
+.stat .num {
+  font-family:'Google Sans','Noto Sans',sans-serif;
+  font-size: 1.9rem; font-weight: 800; color: var(--teal);
+  line-height: 1;
+}
+.stat .lbl { color: var(--muted); font-size: .85rem; margin-top: .4rem; text-transform: uppercase; letter-spacing:.05em; }
+
+/* ---------- Subset cards ---------- */
+.subset-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+@media (max-width: 768px){ .subset-grid { grid-template-columns: 1fr; } }
+.subset {
+  border-radius: 16px;
+  padding: 1.4rem 1.5rem;
+  border: 1px solid var(--line);
+  background: var(--parchment2);
+}
+.subset.a { border-top: 5px solid var(--teal); }
+.subset.b { border-top: 5px solid var(--sand); }
+.subset h4 { font-family:'Google Sans',sans-serif; font-weight:700; font-size:1.25rem; margin-bottom:.2rem; }
+.subset .tag-mini { font-size:.8rem; color: var(--muted); }
+.subset ul { margin-top:.8rem; }
+.subset li { margin:.25rem 0; line-height:1.5; }
+
+/* ---------- Highlights ---------- */
+.highlights { list-style:none; margin:0; padding:0; }
+.highlights li {
+  position: relative;
+  padding-left: 2rem;
+  margin: .9rem 0;
+  line-height: 1.6;
+}
+.highlights li::before {
+  content: "\f02d"; /* book icon via FA */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position:absolute; left:0; top:.1rem;
+  color: var(--teal);
+}
+
+/* ---------- Results table ---------- */
+.table-wrap { overflow-x:auto; border-radius: 12px; border:1px solid var(--line); }
+table.results {
+  width:100%; border-collapse: collapse; background: var(--parchment2);
+  font-variant-numeric: tabular-nums;
+}
+table.results th, table.results td { padding:.55rem .8rem; text-align:center; border-bottom:1px solid var(--line); }
+table.results thead th { background: var(--teal); color:#fff; font-weight:600; }
+table.results tbody td:first-child, table.results thead th:first-child { text-align:left; }
+table.results tr.best { background: rgba(47,93,91,.10); font-weight:700; }
+table.results tr.best td:first-child::after { content:" ★"; color: var(--teal); }
+table.results .grp { background: var(--sand-soft); color: var(--ink); font-weight:600; font-size:.8rem; text-transform:uppercase; letter-spacing:.04em; }
+.table-note { color: var(--muted); font-size:.85rem; margin-top:.6rem; }
+
+/* ---------- BibTeX ---------- */
+.bibtex pre {
+  background: var(--ink);
+  color: #e9e2d2;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  overflow-x:auto;
+  font-size:.9rem;
+}
+
+/* ---------- Floating "More Works" ---------- */
+#more-works {
+  position: fixed; top: 90px; right: 0; z-index: 30;
+  background: var(--parchment2);
+  border: 1px solid var(--line); border-right:none;
+  border-radius: 10px 0 0 10px;
+  box-shadow: -4px 6px 18px rgba(31,42,42,.10);
+  max-width: 230px;
+  transition: transform .25s ease;
+  transform: translateX(calc(100% - 38px));
+}
+#more-works:hover { transform: translateX(0); }
+#more-works .mw-tab {
+  position:absolute; left:0; top:0; height:100%; width:38px;
+  display:flex; align-items:center; justify-content:center;
+  writing-mode: vertical-rl; text-orientation: mixed;
+  background: var(--teal); color:#fff; font-weight:600; letter-spacing:.08em;
+  border-radius: 10px 0 0 10px; cursor: default; font-size:.78rem;
+}
+#more-works .mw-body { padding: .8rem .9rem .8rem 46px; }
+#more-works h5 { font-weight:700; font-size:.8rem; text-transform:uppercase; color:var(--muted); margin-bottom:.4rem; letter-spacing:.05em;}
+#more-works a { display:block; color: var(--teal); font-size:.9rem; margin:.3rem 0; }
+#more-works a:hover { text-decoration: underline; }
+@media (max-width: 900px){ #more-works { display:none; } }
+
+/* ---------- Footer ---------- */
+.footer.is-parchment {
+  background: var(--parchment2);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+.footer a { color: var(--teal); }
