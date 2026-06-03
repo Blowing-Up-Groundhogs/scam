@@ -209,8 +209,15 @@ table.results .grp { background: var(--sand-soft); color: var(--ink); font-weigh
 }
 #more-works .mw-body { padding: .8rem .9rem .8rem 46px; }
 #more-works h5 { font-weight:700; font-size:.8rem; text-transform:uppercase; color:var(--muted); margin-bottom:.4rem; letter-spacing:.05em;}
-#more-works a { display:block; color: var(--teal); font-size:.9rem; margin:.3rem 0; }
+#more-works a { display:block; color: var(--teal); font-size:.9rem; margin:.5rem 0; line-height:1.35; }
 #more-works a:hover { text-decoration: underline; }
+#more-works .mw-venue {
+  display:inline-block; margin-left:.15rem;
+  font-size:.66rem; font-weight:700; letter-spacing:.04em;
+  color: var(--muted); background: var(--sand-soft);
+  border:1px solid var(--line); border-radius:999px; padding:.02rem .45rem;
+  vertical-align: middle;
+}
 @media (max-width: 900px){ #more-works { display:none; } }
 
 /* ---------- Footer ---------- */
